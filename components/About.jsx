@@ -40,8 +40,8 @@ function About() {
 
 
   return (
-    <section className='about-us'>
-      <div className="container">
+    <section className='about-us' >
+      <div className="container" id='about'>
 
         <div className="d-flex justify-content-center align-items-center flex-column">
           <h3 className='fs-42'>About us</h3>

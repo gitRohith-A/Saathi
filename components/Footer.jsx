@@ -48,7 +48,7 @@ const contact = [
 
 const Footer = () => (
     <section className='footer'>
-        <div className="container">
+        <div className="container" id='contact'>
             <div className="sec-1">
                 <div className="outer">
                     <div className="empty"></div>

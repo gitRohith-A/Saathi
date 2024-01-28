@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 function MissionAndVision() {
     return (
-        <section className='mission'>
+        <section className='mission' id='mission'>
             <div className="container">
 
                 <div className="d-flex justify-content-center">

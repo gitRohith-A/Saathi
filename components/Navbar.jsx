@@ -11,7 +11,6 @@ const Navbar = () => {
     const [sideNav, setSideNav] = useState(false);
 
     const navItems = [
-        { id: 'home', label: 'Home' },
         { id: 'about', label: 'About Us' },
         { id: 'mission', label: 'mission and vission' },
         { id: 'contact', label: 'Contact us' },
