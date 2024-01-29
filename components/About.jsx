@@ -32,7 +32,7 @@ function About() {
       image: paint
     },
     {
-      heading: 'jogging',
+      heading: 'Yoga',
       image: yoga
     },
   ]

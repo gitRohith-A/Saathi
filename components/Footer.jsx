@@ -1,3 +1,5 @@
+"use client"
+
 import React from 'react';
 import Image from 'next/image';
 
@@ -10,6 +12,7 @@ import img6 from '../public/gallery/img-6.png';
 import img7 from '../public/gallery/img-7.png';
 import mainLogo from '../public/mainlogo.svg';
 import { FaGithub, FaInstagram, FaLinkedin, FaFacebook, FaTwitter } from "react-icons/fa";
+import Link from 'next/link';
 
 const images = [
     [img5],
@@ -46,66 +49,71 @@ const contact = [
     },
 ]
 
-const Footer = () => (
-    <section className='footer'>
-        <div className="container" id='contact'>
-            <div className="sec-1">
-                <div className="outer">
-                    <div className="empty"></div>
-                    <div className="heading text-capitalize ">
-                        in the middle of every difficulty lies <br /> <span className='green'> opportunity</span>
+const Footer = () => {
+
+
+    return (
+
+        <section className='footer'>
+            <div className="container" id='contact'>
+                <div className="sec-1">
+                    <div className="outer">
+                        <div className="empty"></div>
+                        <div className="heading text-capitalize ">
+                            in the middle of every difficulty lies <br /> <span className='green'> opportunity</span>
+                        </div>
+                    </div>
+                    <div className="d-flex justify-content-center">
+                        <Link className="get-start green" href={'/#home'} >Get Started</Link>
                     </div>
                 </div>
-                <div className="d-flex justify-content-center">
-                    <button className="get-start green">Get Started</button>
-                </div>
-            </div>
 
-            <div className="sec-2-gallery mt-5">
-                <div className="gallery">
-                    <div className="list">
-                        {images.map((group, groupIndex) => (
-                            <div className="item" key={groupIndex}>
-                                {group.map((src, index) => (
-                                    <Image key={index} src={src} alt={src} />
-                                ))}
-                            </div>
-                        ))}
+                <div className="sec-2-gallery mt-5">
+                    <div className="gallery">
+                        <div className="list">
+                            {images.map((group, groupIndex) => (
+                                <div className="item" key={groupIndex}>
+                                    {group.map((src, index) => (
+                                        <Image key={index} src={src} alt={src} />
+                                    ))}
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+
+                <div className="contact py-3">
+                    <div className="content">
+                        <div className="detial ">Contact Details</div>
+                        <div className="name-number white text-capitalize d-flex flex-wrap">
+                            {contact.map((ele, item) => (
+                                <div className="item-1 mx-3" key={item}>
+                                    {ele.name} : <span className='green'>{ele.number}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+
+                <div className="links">
+                    <div className="span-left"></div>
+                    <div className="span-logo"><Image src={mainLogo} height={40} width={40} alt='logo' /></div>
+                    <div className="span-right"></div>
+                </div>
+
+                <div className="social-links pb-5">
+                    <div className="green mx-3">SAATI</div>
+
+                    <div className="d-flex">
+                        <FaInstagram size={15} className='mx-3' fill='#fff' />
+                        <FaLinkedin size={15} className='mx-3' fill='#fff' />
+                        <FaFacebook size={15} className='mx-3' fill='#fff' />
+                        <FaTwitter size={15} className='mx-3' fill='#fff' />
                     </div>
                 </div>
             </div>
-
-            <div className="contact py-3">
-                <div className="content">
-                    <div className="detial ">Contact Details</div>
-                    <div className="name-number white text-capitalize d-flex flex-wrap">
-                        {contact.map((ele, item) => (
-                            <div className="item-1 mx-3" key={item}>
-                                {ele.name} : <span className='green'>{ele.number}</span>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </div>
-
-            <div className="links">
-                <div className="span-left"></div>
-                <div className="span-logo"><Image src={mainLogo} height={40} width={40} alt='logo' /></div>
-                <div className="span-right"></div>
-            </div>
-
-            <div className="social-links pb-5">
-                <div className="green mx-3">SAATI</div>
-
-                <div className="d-flex">
-                    <FaInstagram size={15} className='mx-3' fill='#fff' />
-                    <FaLinkedin size={15} className='mx-3' fill='#fff' />
-                    <FaFacebook size={15} className='mx-3' fill='#fff' />
-                    <FaTwitter size={15} className='mx-3' fill='#fff' />
-                </div>
-            </div>
-        </div>
-    </section>
-);
+        </section>
+    )
+}
 
 export default Footer;
